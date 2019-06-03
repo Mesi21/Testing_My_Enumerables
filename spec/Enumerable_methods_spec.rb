@@ -125,7 +125,7 @@ describe Enumerable do
   context 'testing my_inject on array' do
     let(:array) { [1, 2, 3, 4, 5] }
     it 'returns the product of elements after passing initial value of product as 1' do
-      result = array.inject { |sum, k| sum * k }
+      result = array.inject(1) { |product, k| product * k }
       output = array.my_inject(1) { |product, k| product * k }
       expect(output).to eql result
     end
