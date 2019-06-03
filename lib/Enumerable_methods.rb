@@ -77,7 +77,7 @@ module Enumerable
 
   def my_map
     new_array = []
-    self.my_each{|element| new_array << element if yield(element)}
+    self.my_each{|element| yield(element) ? new_array << true : new_array << false}
     new_array
   end
 
